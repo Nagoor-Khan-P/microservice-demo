@@ -21,7 +21,7 @@ public class CouponServiceImpl implements CouponService{
 	}
 
 	@Override
-	public Coupon getCouponByCode(String code) {
+	public Coupon getCouponByCode(String code) throws CouponNotFound{
 		// TODO Auto-generated method stub
 		Optional<Coupon> coupons =couponRepository.findById(code);
 		if(coupons.isPresent()) {
